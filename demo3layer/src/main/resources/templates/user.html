@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User Detail</title>
+</head>
+<body>
+<h1>User Detail</h1>
+<div>
+    <label>ID:</label>
+    <span th:text="${user.id}"></span>
+</div>
+<div>
+    <label>Name:</label>
+    <span th:text="${user.name}"></span>
+</div>
+<div>
+    <label>Email:</label>
+    <span th:text="${user.email}"></span>
+</div>
+<a th:href="@{/users/{id}/update(id=${user.id})}">Edit</a>
+<a th:href="@{/users/{id}/delete(id=${user.id})}" onclick="return confirm('Are you sure?')">Delete</a>
+</body>
+</html>
